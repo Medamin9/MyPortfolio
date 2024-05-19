@@ -23,11 +23,11 @@ Welcome to the repository for my personal portfolio website, built using React.j
 To run this project locally, follow these steps:
 
 Clone the repository:
- ```bash git clone https://github.com/yourusername/portfolio-website.git
-```bash npm install
+git clone https://github.com/yourusername/portfolio-website.git
+npm install
 Start the development server:
 
-```bash npm run dev
+npm run dev
 
 
 The application will be available at http://localhost:5173
