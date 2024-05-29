@@ -1,0 +1,61 @@
+#home{
+    margin-bottom: -150px;
+}
+#home .intro_text{
+    font-size: 200px;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    z-index: 0;
+}
+#home .info_container{
+    display: flex;
+    gap: 40px;
+}
+#home .user_profile .photo_container{
+    max-width: 400px;
+    border-radius: var(--radius-5);
+    overflow: hidden;
+    
+}
+#home .user_profile .photo_container img{
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+#home .user_profile .photo_container img:hover{
+    filter: drop-shadow(0 0 25px var(--color-primary));
+    
+}
+
+
+#home .details_container{
+    flex: 1;
+}
+#home .details_container *{
+    text-align: center;
+}
+#home .details_container .description{
+    margin-top: 20px;
+
+}
+
+
+@media (max-width:900px){
+    #home .intro_text{
+        font-size:100px ;
+    }
+    #home .info_container{
+        flex-direction: column;
+    }
+    #home .user_profile .photo_container{
+        display: none;
+    }
+}
+.color_primary{
+    color: var(--color-primary);
+}

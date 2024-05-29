@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="https://www.bu.edu/cdn/scripts/slick-accessible/slick.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My portfolio</title>
+    <style type="text/css">
+      html[data-theme="dark"]{
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+<script>
+  (function(){
+    const storageKey = 'theme-preference'
+    function setThemeOnDocumentHTML(darkMode){
+      document.firstElementChild.setAttribute('data-theme',darkMode ? 'dark' : 'light');
+    }
+    let preferDarkQuery = '(prefers-color-schema: dark)';
+    let mql = window.matchMedia(preferDarkQuery);
+    let supportColorSchemeQuery = mql.media ==preferDarkQuery;
+    let localStorageTheme = null;
+    try {
+      localStorageTheme = localStorage.getItem(storageKey)
+    } catch (error) {}
+
+    let localStorageExists = localStorageTheme !== null;
+    if(localStorageExists){
+      localStorageTheme = JSON.parse(localStorageTheme)
+    }
+    
+    if (localStorageExists){
+      setThemeOnDocumentHTML(localStorageTheme)
+    }
+    else if (supportColorSchemeQuery){
+      setThemeOnDocumentHTML(mql.matches);
+    }
+    else{
+      localStorage.setItem(storageKey,JSON.stringify(false))
+    }
+
+  })()
+</script>

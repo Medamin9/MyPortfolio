@@ -1,0 +1,20 @@
+.logo_container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem;
+    color: 2px solid;
+    
+}
+.logo_container .icon{
+    color: var(--color-primary);
+    font-size: 2.5rem;
+}
+@media (max-width : 768px){
+    .logo_container{
+        font-size: 1rem;
+    }
+    .logo_container .icon{
+        font-size: 1.5rem;
+    }
+}
