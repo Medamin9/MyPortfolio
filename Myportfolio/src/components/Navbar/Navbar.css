@@ -29,7 +29,7 @@
     align-items: stretch;
     gap: 20px;
     position: relative;
-    z-index: 1;
+    z-index: 999;
     flex-grow: 1;
 }
 .navigation_bar .menu_container .menu_item{
